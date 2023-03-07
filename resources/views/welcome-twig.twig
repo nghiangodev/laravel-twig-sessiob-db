@@ -8,7 +8,9 @@
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
     <p>test loop</p>
     {% for i in 0..10 %}
-        * {{ i }}
+      <ul>
+          <li>{{ i }}</li>
+      </ul>
     {% endfor %}
 
         <br>
@@ -19,15 +21,13 @@
         email: {{ user.email }}
     {% endfor %}
 
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-            <!-- irrelevant content -->
+    <p>get data with key</p>
 
-            <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                Laravel v{{ app.version }}
-            </div>
-        </div>
-    </div>
+    <ul>
+        {% for key, user in users %}
+            <li>{{ key }}: {{ user.name|e }}</li>
+        {% endfor %}
+    </ul>
 </div>
 </body>
 </html>
