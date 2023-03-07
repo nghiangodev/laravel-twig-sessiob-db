@@ -6,16 +6,19 @@
 <body class="antialiased">
 <h1>Twig Demo</h1>
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+    <p>test loop</p>
     {% for i in 0..10 %}
         * {{ i }}
     {% endfor %}
 
         <br>
 
+    <p>get data user</p>
     {% for user in users %}
         Username: {{ user.name }}
         email: {{ user.email }}
     {% endfor %}
+
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
             <!-- irrelevant content -->
