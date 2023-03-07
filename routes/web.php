@@ -20,7 +20,7 @@ Route::get('/', function () {
 
     $session = SessionModel::all();
 
-    dd($session);
+    return view('welcome',['sessions' =>$session]);
 });
 
 Route::post('/create', function () {
@@ -37,5 +37,5 @@ Route::post('/create', function () {
 Route::get('/twig', function () {
     $user = User::all();
 
-    return view('welcome',['users' =>$user]);
+    return view('welcome-twig',['users' =>$user]);
 });
