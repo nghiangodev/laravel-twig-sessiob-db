@@ -16,6 +16,10 @@ use App\Models\{User,SessionModel};
 */
 
 Route::get('/', function () {
+    if (auth()->user()->id){
+        return view('login');
+    }
+
     Session::put('name', 'Nghia Ngo test');
 
     $session = SessionModel::all();
@@ -39,3 +43,14 @@ Route::get('/twig', function () {
 
     return view('welcome-twig',['users' =>$user]);
 });
+
+Route::post('login', function () {
+    $user = User::where('name',request()->name)->where('password',request()->password)->first();
+
+    Session::push('user', [
+        'name' => $user->name,
+        'email' => $user->email,
+    ]);
+
+    return view('login');
+})->name('login');

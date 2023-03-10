@@ -33,3 +33,19 @@
     <!-- Equivalent to... -->
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 </form>
+
+<h1>
+    Login
+</h1>
+
+<form method="POST" action="{{route('login')}}">
+    @csrf
+    <label for="txt_name">name</label>
+    <input name="name" id="txt_name">
+    <label for="txt_password">pwd</label>
+    <input name="password" id="txt_password">
+
+    <button type="submit">Click</button>
+    <!-- Equivalent to... -->
+    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+</form>
