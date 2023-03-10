@@ -46,10 +46,13 @@ Route::get('/twig', function () {
 
 Route::post('login', function () {
     $user = User::where('name',request()->name)->where('password',request()->password)->first();
+
     Session::forget('user');
+
     Session::push('user', [
         'name' => $user->name,
         'email' => $user->email,
+        'user_id' => $user->id,
     ]);
 
     return view('login');
