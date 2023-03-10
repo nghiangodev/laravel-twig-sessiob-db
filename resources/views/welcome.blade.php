@@ -1,17 +1,17 @@
 <p>Show session</p>
 
     <label>id</label>
-    <textarea>{{$session->first()->id}}</textarea><br>
+    <textarea>{{$sessions->first()->id}}</textarea><br>
     <label>user_id</label>
-    <textarea>{{$session->first()->user_id}}</textarea><br>
+    <textarea>{{$sessions->first()->user_id}}</textarea><br>
     <label>ip_address</label>
-    <textarea>{{$session->first()->ip_address}}</textarea><br>
+    <textarea>{{$sessions->first()->ip_address}}</textarea><br>
     <label>user_agent</label>
-    <textarea>{{$session->first()->user_agent}}</textarea><br>
+    <textarea>{{$sessions->first()->user_agent}}</textarea><br>
     <label>payload</label>
-    <textarea>{{$session->first()->payload}}</textarea><br>
+    <textarea>{{$sessions->first()->payload}}</textarea><br>
     <label>last_activity</label>
-    <textarea>{{$session->first()->last_activity}}</textarea><br>
+    <textarea>{{$sessions->first()->last_activity}}</textarea><br>
 
 <textarea></textarea>
 
