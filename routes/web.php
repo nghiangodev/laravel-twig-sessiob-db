@@ -16,7 +16,7 @@ use App\Models\{User,SessionModel};
 */
 
 Route::get('/', function () {
-    if (auth()->user()->id){
+    if (Session::get('user')){
         return view('login');
     }
 
@@ -46,7 +46,7 @@ Route::get('/twig', function () {
 
 Route::post('login', function () {
     $user = User::where('name',request()->name)->where('password',request()->password)->first();
-
+    Session::forget('user');
     Session::push('user', [
         'name' => $user->name,
         'email' => $user->email,
